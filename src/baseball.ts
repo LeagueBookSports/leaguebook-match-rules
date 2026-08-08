@@ -1,4 +1,4 @@
-// Baseball (MLB via API-Sports) — status short-codes.
+// Baseball (MLB via API-Sports) — status short-codes + league priority stub.
 
 export const BASEBALL_LIVE_STATUSES = [
   'LIVE',
@@ -45,4 +45,15 @@ export function getBaseballMatchStatusOrder(
   if (isBaseballLive(status)) return 0
   if (isBaseballFinished(status)) return 2
   return 1
+}
+
+// Kept for parity with NFL/Basketball. Baseball uses pinned order
+// primarily, so this always returns the "unknown-priority" bucket.
+// When we start seeding league IDs here (MLB, NPB, KBO, Liga MX
+// Béisbol), extend the same way the basketball helper does.
+export function getBaseballLeaguePriority(
+  _leagueId: number,
+  _leagueName: string,
+): number {
+  return 999
 }

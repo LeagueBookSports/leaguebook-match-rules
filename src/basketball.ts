@@ -1,4 +1,4 @@
-// Basketball — API-Basketball status short-codes.
+// Basketball — API-Basketball status short-codes + league priority.
 
 export type BasketballStatusShort =
   | 'NS'
@@ -68,4 +68,44 @@ export function getBasketballMatchStatusOrder(
   if (isBasketballLive(status)) return 0
   if (isBasketballFinished(status)) return 1
   return 2
+}
+
+// League IDs ordered by display priority (NBA always first).
+export const BASKETBALL_LEAGUE_PRIORITY: number[] = [
+  12, // NBA
+  13, // WNBA (NBA W)
+  120, // EuroLeague
+  117, // NBL (Australia)
+  116, // BSL (Turkey)
+  119, // Liga ACB (Spain)
+  118, // LNB Pro A (France)
+  124, // BBL (Germany)
+]
+
+// Name-based fallback in case the backend returns an unexpected ID.
+const BASKETBALL_PRIORITY_NAMES: string[] = [
+  'nba',
+  'wnba',
+  'nba w',
+  'euroleague',
+  'nbl',
+  'bsl',
+  'liga acb',
+  'lnb',
+  'bbl',
+]
+
+export function getBasketballLeaguePriority(id: number, name?: string): number {
+  const idIdx = BASKETBALL_LEAGUE_PRIORITY.indexOf(id)
+  if (idIdx !== -1) return idIdx
+
+  if (name) {
+    const nameIdx = BASKETBALL_PRIORITY_NAMES.findIndex(
+      (n) => n === name.toLowerCase(),
+    )
+    if (nameIdx !== -1) return nameIdx
+  }
+
+  // Unknown leagues sort after all known ones.
+  return 9999
 }

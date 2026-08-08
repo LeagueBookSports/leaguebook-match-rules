@@ -4,4 +4,6 @@ export type NflStatusShort = (typeof NFL_LIVE_STATUSES)[number] | (typeof NFL_FI
 export declare function isNflLive(status: string | null | undefined): boolean;
 export declare function isNflFinished(status: string | null | undefined): boolean;
 export declare function getNflMatchStatusOrder(status: string | null | undefined): number;
+export declare const NFL_LEAGUE_PRIORITY: number[];
+export declare function getNflLeaguePriority(id: number, name?: string): number;
 //# sourceMappingURL=nfl.d.ts.map

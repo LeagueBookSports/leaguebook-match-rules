@@ -8,4 +8,6 @@ export declare function isBasketballFinished(status: string | null | undefined):
 export declare function isBasketballUpcoming(status: string | null | undefined): boolean;
 export declare function isBasketballNotPlayed(status: string | null | undefined): boolean;
 export declare function getBasketballMatchStatusOrder(status: string | null | undefined): number;
+export declare const BASKETBALL_LEAGUE_PRIORITY: number[];
+export declare function getBasketballLeaguePriority(id: number, name?: string): number;
 //# sourceMappingURL=basketball.d.ts.map

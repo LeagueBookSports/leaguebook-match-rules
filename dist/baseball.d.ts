@@ -3,4 +3,5 @@ export declare const BASEBALL_FINISHED_STATUSES: readonly ["FT", "AET", "PEN", "
 export declare function isBaseballLive(status: string | null | undefined): boolean;
 export declare function isBaseballFinished(status: string | null | undefined): boolean;
 export declare function getBaseballMatchStatusOrder(status: string | null | undefined): number;
+export declare function getBaseballLeaguePriority(_leagueId: number, _leagueName: string): number;
 //# sourceMappingURL=baseball.d.ts.map

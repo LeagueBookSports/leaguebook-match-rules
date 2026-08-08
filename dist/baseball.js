@@ -1,10 +1,11 @@
 "use strict";
-// Baseball (MLB via API-Sports) — status short-codes.
+// Baseball (MLB via API-Sports) — status short-codes + league priority stub.
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BASEBALL_FINISHED_STATUSES = exports.BASEBALL_LIVE_STATUSES = void 0;
 exports.isBaseballLive = isBaseballLive;
 exports.isBaseballFinished = isBaseballFinished;
 exports.getBaseballMatchStatusOrder = getBaseballMatchStatusOrder;
+exports.getBaseballLeaguePriority = getBaseballLeaguePriority;
 exports.BASEBALL_LIVE_STATUSES = [
     'LIVE',
     'IN',
@@ -42,4 +43,11 @@ function getBaseballMatchStatusOrder(status) {
     if (isBaseballFinished(status))
         return 2;
     return 1;
+}
+// Kept for parity with NFL/Basketball. Baseball uses pinned order
+// primarily, so this always returns the "unknown-priority" bucket.
+// When we start seeding league IDs here (MLB, NPB, KBO, Liga MX
+// Béisbol), extend the same way the basketball helper does.
+function getBaseballLeaguePriority(_leagueId, _leagueName) {
+    return 999;
 }
