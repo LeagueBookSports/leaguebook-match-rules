@@ -1,0 +1,26 @@
+{
+  "name": "leaguebook-match-rules",
+  "version": "0.1.0",
+  "description": "Shared match-status rules for LeagueBook — one source of truth for the four sports across web (leaguebook-frontend) and mobile (leaguebook-mobile).",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepack": "npm run build",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "leaguebook",
+    "match-status",
+    "sports"
+  ],
+  "license": "UNLICENSED",
+  "private": false,
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
