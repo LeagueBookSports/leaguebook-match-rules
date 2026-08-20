@@ -54,7 +54,9 @@ import { isBasketballLive } from 'leaguebook-match-rules/dist/basketball'
   not-played lists, `isFootballLive/…`, `getFootballMatchState`,
   `getFootballMatchStatusOrder`.
 - **Basketball** — same shape.
-- **American football (NFL)** — live/finished lists, order helper.
+- **American football (NFL)** — `NflStatusShort`, live/finished/upcoming/
+  not-played lists, `isNflLive/…`, `getNflMatchState`,
+  `getNflMatchStatusOrder`, plus league priority with a name fallback.
 - **Baseball** — `BaseballStatusShort`, live/finished/upcoming/not-played
   lists, `isBaseballLive/…`, `getBaseballMatchState`,
   `getBaseballMatchStatusOrder`. Inning codes are `IN1`…`IN9` as the

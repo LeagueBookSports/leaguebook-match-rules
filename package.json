@@ -1,6 +1,6 @@
 {
   "name": "leaguebook-match-rules",
-  "version": "0.3.0",
+  "version": "0.30.0",
   "description": "Shared match-status rules for LeagueBook \u2014 one source of truth for the four sports across web (leaguebook-frontend) and mobile (leaguebook-mobile).",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
